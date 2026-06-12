@@ -1,0 +1,51 @@
+﻿# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# EF Core local database files (если вдруг будут)
+*.db
+*.db-shm
+*.db-wal
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Publish folders
+publish/
+out/
+
+# Test results
+TestResults/
+CoverageResults/
+
+# Docker
+docker-data/
+
+# Temporary files
+*.tmp
+*.temp
