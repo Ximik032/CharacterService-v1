@@ -6,7 +6,7 @@ namespace CharacterService.Application.DTOs.Paginations
     public record PaginatedResponse<T>
     {
         [JsonPropertyName("items")]
-        public IReadOnlyList<T> Items { get; init; }
+        public IReadOnlyList<T> Items { get; init; } = Array.Empty<T>();
 
         [JsonPropertyName("page")]
         public int Page { get; init; } = 1;
