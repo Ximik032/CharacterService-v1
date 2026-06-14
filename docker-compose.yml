@@ -1,0 +1,29 @@
+﻿services:
+  character-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: character-service-v1
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Postgress: Host=character-db;Port=5432;Database=CharacterDb;Username=postgres;Password=1234321
+    depends_on:
+      - character-db
+
+  character-db:
+    image: postgres:16
+    container_name: character-db
+    environment:
+      POSTGRES_DB: CharacterDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234321
+    ports:
+      - "5433:5432"
+    volumes:
+      - character_pgdata:/var/lib/postgresql/data
+
+volumes:
+  character_pgdata:  
